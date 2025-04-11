@@ -1,0 +1,21 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DocxToMarkdown",
+            "type": "coreclr", // Adjust if not a .NET Core project
+            "request": "launch",
+            "preLaunchTask": "dotnet: build", // Assumes a build task is configured
+            // If you have published the app, change the program path below.
+            "program": "${workspaceFolder}/bin/Debug/net9.0/DocxToMarkdown.exe", // Adjust the framework and path as needed
+            "args": ["Checklist.docx", "Checklist.md"],
+            "cwd": "${workspaceFolder}/bin/Debug/net9.0",
+            // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
+}
