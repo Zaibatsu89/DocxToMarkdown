@@ -98,7 +98,7 @@ public class Program
         // Handle bullet points
         if (HasBulletNumbering(paragraphProps))
         {
-            markdownBuilder.AppendLine($"- {ExtractTextFromParagraph(paragraph)}\n");
+            markdownBuilder.AppendLine($"- {ExtractTextFromParagraph(paragraph)}");
             return;
         }
 
