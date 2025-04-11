@@ -87,6 +87,9 @@ public class Program
         ParagraphProperties? paragraphProps = paragraph.ParagraphProperties;
         string? styleName = GetStyleName(paragraphProps);
 
+        // Define the name of the custom style used for checklist items in Word
+        const string ChecklistStyleName = "ChecklistItem"; // <<< BELANGRIJK: Moet overeenkomen met de naam in Word!
+
         // Handle heading levels
         if (styleName?.StartsWith("Heading") == true && int.TryParse(styleName.Substring(7), out int headingLevel))
         {
@@ -94,6 +97,20 @@ public class Program
             markdownBuilder.AppendLine($"{hashMarks} {ExtractTextFromParagraph(paragraph)}");
             return;
         }
+
+        // --- NIEUWE CHECK: Handle Checklist items based on style ---
+        if (styleName == ChecklistStyleName)
+        {
+            string checklistText = ExtractTextFromParagraph(paragraph).Trim();
+            if (!string.IsNullOrWhiteSpace(checklistText))
+            {
+                markdownBuilder.AppendLine($"- [ ] {checklistText}");
+                // GEEN extra AppendLine() hier, om "tight lists" te bevorderen
+            }
+            // Mogelijke lege checklist items negeren we
+            return; // Checklist item verwerkt, ga niet verder
+        }
+        // --- EINDE NIEUWE CHECK ---
 
         // Handle bullet points
         if (HasBulletNumbering(paragraphProps))
