@@ -1,6 +1,6 @@
-# DocxToMarkdown
+# DOCX to Markdown
 
-DocxToMarkdown is een C#-applicatie waarmee je eenvoudig Microsoft Word-documenten (.docx) kunt converteren naar Markdown-formaat. Deze tool is ideaal voor ontwikkelaars, schrijvers en documentatiebeheerders die hun Word-bestanden snel willen omzetten voor gebruik in bijvoorbeeld GitHub, wikis of andere markdown-omgevingen.
+DocxToMarkdown is een C#-applicatie waarmee je eenvoudig Microsoft Word-documenten (.docx) kunt converteren naar Markdown-formaat. Deze tool is ideaal voor ontwikkelaars, schrijvers en documentatiebeheerders die hun Word-bestanden snel willen omzetten voor gebruik in bijvoorbeeld GitHub, wikis of andere markdown-omgevingen. Het is gebouwd met .NET 10.0.
 
 ## Features
 
