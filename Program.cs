@@ -241,7 +241,7 @@ public class Program
 
     private static void ExtractMetadata(WordprocessingDocument doc, StringBuilder markdownBuilder)
     {
-        IPackageProperties? coreProps = doc.PackageProperties;
+        var coreProps = doc.PackageProperties;
         if (coreProps != null)
         {
             markdownBuilder.AppendLine("## Document Metadata");
